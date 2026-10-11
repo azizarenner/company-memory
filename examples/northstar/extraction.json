@@ -1,0 +1,100 @@
+{
+  "title": "Northstar decision memory",
+  "source_manifest": [
+    {
+      "path": "01-january-proposal.md",
+      "sha256": "80ab676f1fbb560cc7f706666e802d55fc8219af7cc2f3e16e606a6912590839"
+    },
+    {
+      "path": "02-february-approval.md",
+      "sha256": "acc3b1578068cfce44bb6412b8d7b53a1564ddf2999976258cdbc8611159c4af"
+    },
+    {
+      "path": "03-april-review.md",
+      "sha256": "82292cf65b60479392ad71a122a2003acacb92475ffb921e7f9b7d15e55e10fb"
+    },
+    {
+      "path": "04-may-decision.md",
+      "sha256": "0aa1fa1028208b7010509447ae16617ba826a4af5a6afdb7d6fa715c24aefb4c"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "trial-onboarding",
+      "title": "Trial onboarding",
+      "claims": [
+        {
+          "kind": "current_decision",
+          "text": "Effective May 1, 2026, enterprise trials require assisted onboarding. Smaller customers may continue with self-service trials.",
+          "date": "2026-05-01",
+          "evidence": [
+            {
+              "source": "04-may-decision.md",
+              "quote": "From May 1, 2026, enterprise trials require assisted onboarding. Smaller customers may continue with self-service trials."
+            }
+          ]
+        },
+        {
+          "kind": "proposal",
+          "text": "January 15: a 14-day self-service trial for every segment was proposed, but not approved.",
+          "date": "2026-01-15",
+          "evidence": [
+            {
+              "source": "01-january-proposal.md",
+              "quote": "We propose offering a 14-day self-service trial to every customer segment."
+            }
+          ]
+        },
+        {
+          "kind": "past_decision",
+          "text": "February 3: all-segment 14-day self-service trials were approved for a pilot ending April 30, 2026.",
+          "date": "2026-02-03",
+          "evidence": [
+            {
+              "source": "02-february-approval.md",
+              "quote": "Approved: run a 14-day self-service trial for all customer segments through April 30, 2026."
+            }
+          ]
+        },
+        {
+          "kind": "recommendation",
+          "text": "April 24: assisted enterprise onboarding was recommended, not yet approved.",
+          "date": "2026-04-24",
+          "evidence": [
+            {
+              "source": "03-april-review.md",
+              "quote": "This review recommends a change; it does not approve that change."
+            },
+            {
+              "source": "03-april-review.md",
+              "quote": "We recommend assisted onboarding for enterprise trials."
+            }
+          ]
+        },
+        {
+          "kind": "rationale",
+          "text": "The May decision followed configuration difficulties reported in April and replaced the pilot arrangement.",
+          "date": "2026-05-01",
+          "evidence": [
+            {
+              "source": "04-may-decision.md",
+              "quote": "This follows the setup difficulties described in the April pilot review and replaces the all-segment self-service arrangement used during the pilot."
+            },
+            {
+              "source": "03-april-review.md",
+              "quote": "Several larger customers needed help configuring their accounts during the pilot."
+            }
+          ]
+        }
+      ],
+      "unknowns": [
+        "These sources do not define enterprise or smaller customer, so an employee-count threshold cannot be inferred.",
+        "These sources do not establish who can approve an exception or whether exceptions are allowed.",
+        "The May decision does not establish the ongoing trial duration; 14 days was explicitly approved for the pilot.",
+        "These sources do not establish changes after May 1, 2026."
+      ],
+      "conflicts": [],
+      "related": []
+    }
+  ]
+}
