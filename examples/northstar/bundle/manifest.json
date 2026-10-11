@@ -1,0 +1,36 @@
+{
+  "tool": "company-memory/0.1.0",
+  "built_at": "2026-10-11T17:14:36.585435+00:00",
+  "provenance": {
+    "mode": "imported extraction; authorship not asserted"
+  },
+  "sources": [
+    {
+      "path": "01-january-proposal.md",
+      "sha256": "80ab676f1fbb560cc7f706666e802d55fc8219af7cc2f3e16e606a6912590839"
+    },
+    {
+      "path": "02-february-approval.md",
+      "sha256": "acc3b1578068cfce44bb6412b8d7b53a1564ddf2999976258cdbc8611159c4af"
+    },
+    {
+      "path": "03-april-review.md",
+      "sha256": "82292cf65b60479392ad71a122a2003acacb92475ffb921e7f9b7d15e55e10fb"
+    },
+    {
+      "path": "04-may-decision.md",
+      "sha256": "0aa1fa1028208b7010509447ae16617ba826a4af5a6afdb7d6fa715c24aefb4c"
+    }
+  ],
+  "artifacts": {
+    "REVIEW.md": "76a9ab891dd99d607781a36daade0a4cfd01fbf1902920b3284074b6029570b3",
+    "context.md": "5524c0e52d449796d8aed6123605d406e1d413fd9422220f16ee64dd12ec4a9d",
+    "extraction.json": "0aa6ffcb61f6e09b844ed151d78e9df89c567b41460e058480bf7a9558e20a04",
+    "knowledge/decisions/trial-onboarding.md": "d38e3e8e16399facebab2b902d16362c33dd9da9df36b2f44cd85bfd4ddd8499",
+    "knowledge/index.md": "9e5c589b9df5e567c6d0b43708f0a1e66602fa92f41e495be9aeadbd449c454a",
+    "sources/01-january-proposal.md": "80ab676f1fbb560cc7f706666e802d55fc8219af7cc2f3e16e606a6912590839",
+    "sources/02-february-approval.md": "acc3b1578068cfce44bb6412b8d7b53a1564ddf2999976258cdbc8611159c4af",
+    "sources/03-april-review.md": "82292cf65b60479392ad71a122a2003acacb92475ffb921e7f9b7d15e55e10fb",
+    "sources/04-may-decision.md": "0aa1fa1028208b7010509447ae16617ba826a4af5a6afdb7d6fa715c24aefb4c"
+  }
+}
