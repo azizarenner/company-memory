@@ -1,0 +1,7 @@
+{
+  "status": "not run",
+  "question": "Can an enterprise customer get a self-service trial?",
+  "raw_characters": 1438,
+  "bundle_characters": 3625,
+  "note": "Characters are not tokens. Use independent fresh sessions and score against original sources. Include extraction cost. No performance claim."
+}
