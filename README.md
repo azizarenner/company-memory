@@ -10,7 +10,7 @@ It reads complete Markdown and text files, accepts or generates a structured ext
 
 ## Explore the three use cases
 
-Read the [complete Northstar worked example](COMPANY_MEMORY_EXAMPLE.md): ten fictional source documents, a decision history, an agent onboarding guide and an explanation connecting documents. Start with the onboarding guide’s worked request. All three outputs are assistant-prepared drafts awaiting human review, not automatically compiled or independently validated results.
+Read the [complete Northstar worked example](COMPANY_MEMORY_EXAMPLE.md): ten fictional source documents, a decision history, an agent onboarding guide and an explanation connecting documents. Start with the onboarding guide’s worked request. All three outputs are assistant-prepared drafts with completed [source and usefulness checks](SOURCE_REVIEW.md). Independent human validation is pending; these are not automatically compiled or benchmarked results.
 
 ## See the original compiler example
 
