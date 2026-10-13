@@ -1,23 +1,23 @@
 # Roadmap: three company-memory problems
 
-## 1. Remembering decisions — prototype implemented
+## Current milestone: three worked examples
 
-Inputs: complete text documents. Outputs: draft decisions, history, evidence, unknowns, conflict entries, and full context.
+The [Northstar reading guide](../COMPANY_MEMORY_EXAMPLE.md) supplies ten fictional sources and three assistant-authored views. Each includes a concrete work output. [Source and usefulness checks](../SOURCE_REVIEW.md) are complete; independent human validation is pending.
 
-Next evidence: live extraction, unseen decision examples, independent review, and a raw-files comparison. Do not claim success beyond the verified compiler behavior.
+## Remembering decisions
 
-## 2. Onboarding an agent — design stage
+The Python prototype compiles decision-focused knowledge bundles. Local live comparisons exposed errors in extraction, temporal interpretation, citations and model review. See [experiment status](../EXPERIMENT_STATUS.md). A successful compiler check does not establish semantic correctness.
 
-Extend the content model with vocabulary, process descriptions, role boundaries, and task-specific context. Distinguish source knowledge from operational instructions. Test whether an agent can use a metric correctly without inventing its definition.
+## Onboarding an agent
 
-Completion criterion: an agent performs a bounded onboarding task using the bundle and cites definitions correctly; compare against the raw material.
+The worked guide joins vocabulary, responsibilities and a request process. It includes a routable enterprise request and a missing-segment case. Automatic generation and task-completion benefits have not been evaluated.
 
-## 3. Connecting scattered knowledge — design stage
+## Connecting scattered knowledge
 
-Evidence-backed relationships are supported in the prototype, but automatic cross-document synthesis is not independently evaluated. Explore links between decisions, customer constraints, processes, and metrics. Preserve conflicting definitions and source-specific terminology.
+The worked explanation links support observations, a policy review, an approved decision and a product proposal. It distinguishes documented relationships from interpretation. Automatic synthesis and usefulness on unseen tasks have not been validated.
 
-Completion criterion: held-out multi-document questions answered with correct reasoning and citations, including cases where no defensible connection exists.
+## Future validation
 
-## Later, only with evidence of need
+Review task usefulness and reference answers with humans. Compare raw documents, human-checked memory and automatically prepared memory on unseen cases, separating extraction quality from answer quality. Include original questions in answer reviews and calibrate model judges against human judgments. Measure preparation and review costs as well as answer costs.
 
-PDF conversion, incremental rebuilds, explicit approval workflows, permission-aware packaging, signed bundles, evaluation automation, and alternative model adapters. A larger corpus may require selective navigation or retrieval; that is a design decision, not a failure to honor a slogan.
+Larger corpora, incremental updates, permissions and optional navigation or retrieval require separate design work. Retrieval-free loading remains a bounded choice, not a promise that company context is solved.

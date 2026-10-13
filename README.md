@@ -2,13 +2,17 @@
 
 **Turn a small collection of company documents into an evidence-linked knowledge bundle for an AI agent.**
 
-Company Memory is an experimental Python tool for exploring a question: can an agent distinguish what a company proposed, what it approved, and what it later changed?
+Company Memory explores three uses of prepared company knowledge: remembering decisions, onboarding an agent, and connecting scattered knowledge. The Python prototype currently compiles decision-focused bundles; the broader use cases are illustrated in a draft worked example.
 
 It reads complete Markdown and text files, accepts or generates a structured extraction, checks exact evidence quotes, and writes a draft [Open Knowledge Format (OKF v0.2)](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md) bundle. It also assembles that bundle into one context file.
 
-**Status:** early prototype. Offline compilation and failure cases are tested. Live model extraction has not yet been tested. No claim of improved answer accuracy, token savings, or superiority to RAG has been established.
+**Status:** early prototype. Offline compilation and failure cases are tested. Local live extraction and answer comparisons have exposed interpretation and reviewer errors; independent human validation is pending. See [experiment status](EXPERIMENT_STATUS.md). No claim of improved answer accuracy, token savings, or superiority to RAG has been established.
 
-## See the example
+## Explore the three use cases
+
+Read the [complete Northstar worked example](COMPANY_MEMORY_EXAMPLE.md): ten fictional source documents, a decision history, an agent onboarding guide and an explanation connecting documents. Start with the onboarding guide’s worked request. All three outputs are assistant-prepared drafts with completed [source and usefulness checks](SOURCE_REVIEW.md). Independent human validation is pending; these are not automatically compiled or benchmarked results.
+
+## See the original compiler example
 
 Northstar is a fictional company. Its January proposal, February pilot approval, April review, and May decision explain why enterprise trials moved to assisted onboarding.
 
@@ -56,7 +60,7 @@ python3 company_memory.py build path/to/source-folder \
   --model YOUR_MODEL_ID --out build/my-memory
 ```
 
-This command sends all accepted source files to the OpenAI Responses API and incurs that provider's model charges. It requests `store: false`; that setting is not a general promise about provider retention policies. The key is read from the environment and is never saved in a bundle. There is no default model or automatic retry. Incomplete responses and refusals fail without producing a bundle. The API adapter has mocked transport tests but has not been exercised with live credentials.
+This command sends all accepted source files to the OpenAI Responses API and incurs that provider's model charges. It requests `store: false`; that setting is not a general promise about provider retention policies. The key is read from the environment and is never saved in a bundle. There is no default model or automatic retry. Incomplete responses and refusals fail without producing a bundle. The published adapter has mocked transport tests. Subsequent local evaluation code has exercised live requests; those experimental code additions are not included in this documentation update.
 
 The adapter follows [OpenAI's structured output documentation](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses). Structured output constrains the response shape, not its factual correctness.
 
