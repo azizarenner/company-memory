@@ -6,7 +6,7 @@ Company Memory explores three uses of prepared company knowledge: remembering de
 
 It reads complete Markdown and text files, accepts or generates a structured extraction, checks exact evidence quotes, and writes a draft [Open Knowledge Format (OKF v0.2)](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md) bundle. It also assembles that bundle into one context file.
 
-**Status:** early prototype. Offline compilation and failure cases are tested. Local live extraction and answer comparisons have exposed interpretation and reviewer errors; independent human validation is pending. See [experiment status](EXPERIMENT_STATUS.md). No claim of improved answer accuracy, token savings, or superiority to RAG has been established.
+**Status:** early prototype. The [October 14 results archive](NORTHSTAR_RESULTS.md) includes a human-reviewed GPT-4.1 mini comparison and a Claude Code follow-up with provisional assistant scores. It contains fictional sources, exact task packets, unchanged answers, scores, and the recorded startup failure/recovery. Results are from one known development case; they do not establish general model or architecture superiority. Earlier experiments are documented in [experiment status](EXPERIMENT_STATUS.md).
 
 ## Explore the three use cases
 
@@ -120,3 +120,4 @@ See [architecture](docs/architecture.md), [roadmap](docs/roadmap.md), and [contr
 ## License
 
 MIT. See [LICENSE](LICENSE). The included Northstar documents are fictional and covered by the same license.
+
