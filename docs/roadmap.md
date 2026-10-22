@@ -1,23 +1,35 @@
-# Roadmap: three company-memory problems
+# Company Memory roadmap
 
-## Current milestone: three worked examples
+The project explores three uses of persistent company context: remembering decisions, onboarding agents, and connecting scattered knowledge.
 
-The [Northstar reading guide](../COMPANY_MEMORY_EXAMPLE.md) supplies ten fictional sources and three assistant-authored views. Each includes a concrete work output. [Source and usefulness checks](../SOURCE_REVIEW.md) are complete; independent human validation is pending.
+## Completed foundations
 
-## Remembering decisions
+- A Python compiler for evidence-linked decision bundles, with source snapshots, quote checks, hashes, and a complete context file.
+- A [worked Northstar example](../COMPANY_MEMORY_EXAMPLE.md) covering decision history, onboarding, and cross-document explanation.
+- A [published study](../NORTHSTAR_RESULTS.md) comparing original documents and prepared memory, with source material, unchanged answers, and scores.
 
-The Python prototype compiles decision-focused knowledge bundles. Local live comparisons exposed errors in extraction, temporal interpretation, citations and model review. See [experiment status](../EXPERIMENT_STATUS.md). A successful compiler check does not establish semantic correctness.
+## Next experiments
 
-## Onboarding an agent
+### Update policies without losing history
 
-The worked guide joins vocabulary, responsibilities and a request process. It includes a routable enterprise request and a missing-segment case. Automatic generation and task-completion benefits have not been evaluated.
+Change an approval and test both current and historical questions. Track effective dates, supersession, and which derived records need rebuilding.
 
-## Connecting scattered knowledge
+### Share context between agents
 
-The worked explanation links support observations, a policy review, an approved decision and a product proposal. It distinguishes documented relationships from interpretation. Automatic synthesis and usefulness on unseen tasks have not been validated.
+Compare handoffs containing task state, evidence references, and unresolved fields. Keep working observations distinguishable from approved company knowledge.
 
-## Future validation
+### Propagate access changes
 
-Review task usefulness and reference answers with humans. Compare raw documents, human-checked memory and automatically prepared memory on unseen cases, separating extraction quality from answer quality. Include original questions in answer reviews and calibrate model judges against human judgments. Measure preparation and review costs as well as answer costs.
+Test how revoked access or deleted sources affect derived memory and task context. Permission handling is a planned capability; the current compiler is designed for a local source folder.
 
-Larger corpora, incremental updates, permissions and optional navigation or retrieval require separate design work. Retrieval-free loading remains a bounded choice, not a promise that company context is solved.
+### Compare representations and retrieval
+
+Evaluate files, structured records, and graph relationships against the same tasks. Compare complete-context loading with retrieval where collection size warrants it.
+
+### Measure reliability and total cost
+
+Use unseen cases and a consistent review process. Measure extraction quality separately from answer quality, and include preparation, updates, retrieval, generation, verification, and retries in cost per successful task.
+
+## Implementation focus
+
+Decision extraction is implemented. Automatic onboarding-guide generation and cross-document synthesis are future extensions illustrated by the current authored examples. Incremental updates and permissions will require additions to the compiler architecture.

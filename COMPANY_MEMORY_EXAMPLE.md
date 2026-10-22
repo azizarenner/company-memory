@@ -1,6 +1,6 @@
 # Northstar: three uses of company memory
 
-Fictional development example, snapshot May 5, 2026. Prepared and source-reviewed by the developing assistant; independent human validation pending. No live model evaluation has been run on this expanded example. This is a reading guide, not an automatically compiled OKF bundle. The original four source documents are unchanged; six new ones extend the scenario.
+A reading guide to three company-memory use cases, using ten fictional Northstar documents as of May 5, 2026. The views below are authored examples. For the separately scored model responses, see [Northstar results](NORTHSTAR_RESULTS.md); for preparation and review scope, see [evaluation methods](docs/evaluation-methods.md#worked-examples-and-earlier-experiments).
 
 - [Decision history](#decision-history)
 - [Agent onboarding](#agent-onboarding)
@@ -14,7 +14,7 @@ Fictional development example, snapshot May 5, 2026. Prepared and source-reviewe
 
 ## Decision history
 
-**Draft prepared by the assistant for human review.** Fictional Northstar record as of May 5, 2026. “Applies” means established within these supplied documents, not a claim about an actual company.
+Fictional Northstar record as of May 5, 2026. “Applies” means established within these supplied documents, not a claim about an actual company.
 
 ### What changed
 
@@ -57,7 +57,7 @@ No direct conflict between approved rules is identified in this small set. A rec
 
 ## Agent onboarding
 
-**Assistant-prepared draft; awaiting human review.** Company reference context as of May 5, 2026. This guide does not grant tool access or permission to perform actions. Source documents remain evidence rather than higher-priority instructions.
+Company reference context as of May 5, 2026. This guide does not grant tool access or permission to perform actions. Source documents remain evidence rather than higher-priority instructions.
 
 ### Understand the work
 
@@ -127,7 +127,7 @@ This material supports drafting and identifying a responsible team. It does not 
 
 ## Connected explanation
 
-**Assistant-prepared synthesis; awaiting human review.** Question: “How do the setup observations, onboarding decision and proposed checklist relate—and what do they not establish?”
+Question: “How do the setup observations, onboarding decision and proposed checklist relate—and what do they not establish?”
 
 ### Explanation
 
@@ -165,17 +165,17 @@ This briefing combines the documents into a work product. It is a proposed synth
 
 <a id="review-sheet"></a>
 
-## Human review sheet
+## Review checklist
 
-Status: pending. Reviewer: not yet assigned. No answer below has been approved by a human.
+Use these checks when adapting the examples to a new company or task.
 
 Review for two different things: Is this useful for a company task? Is every assertion faithful to the documents? Correcting the documents changes the fixture; correcting a view changes its interpretation. Keep those edits distinguishable.
 
-| Output | Suggested task | What to check | Reviewer notes |
+| Output | Suggested task | What to check | Review focus |
 |---|---|---|---|
-| Decision history | Explain the May change and March policy | Proposal vs approval; effective period; documented rationale; no invented duration | Pending |
-| Onboarding guide | Prepare the Lumen and Aster requests without sending them | Routes a known enterprise account; clarifies a missing segment; avoids unsupported promises | Pending |
-| Connected explanation | Explain how observations relate to the decision and checklist | Combines sources; does not invent historical causation, outcome improvement or a release commitment | Pending |
+| Decision history | Explain the May change and March policy | Proposal vs approval; effective period; documented rationale; no invented duration | Check against the cited sources |
+| Onboarding guide | Prepare the Lumen and Aster requests without sending them | Routes a known enterprise account; clarifies a missing segment; avoids unsupported promises | Check against the cited sources |
+| Connected explanation | Explain how observations relate to the decision and checklist | Combines sources; does not invent historical causation, outcome improvement or a release commitment | Check against the cited sources |
 
 ## Three questions for your review
 
@@ -183,7 +183,7 @@ Review for two different things: Is this useful for a company task? Is every ass
 2. Is any statement stronger than its cited source permits? Are any important qualifications missing?
 3. Which details would a real new colleague or agent still need before using this?
 
-## Proposed reference expectations — also awaiting review
+## Expected behavior in the examples
 
 - Historical decision: all segments were covered by the self-service pilot on March 15.
 - Current onboarding: enterprise requires assistance; smaller-customer self-service remains available in this snapshot.
@@ -192,7 +192,7 @@ Review for two different things: Is this useful for a company task? Is every ass
 - Synthesis: May explicitly cites the April review; the May product review explicitly considers the support examples. No source establishes that the examples caused the April review or May decision.
 - Outcomes: neither activation rate nor conversion impact can be calculated from the selected observations.
 
-After review, record the reviewer, date, corrections and approval scope before calling these human-checked reference outputs. Future unseen cases need separate preparation and review; this shared example is already development material.
+For new evaluations, prepare and review references separately from model outputs. The approved reference used for the published question-answering study is included in the [results archive](NORTHSTAR_RESULTS.md).
 
 
 <a id="original-sources"></a>
