@@ -1,23 +1,19 @@
-# Claude Code vs earlier GPT-4.1 mini: scoring with targeted adjudication
+# Northstar answer comparison
 
-Initial scorer: Codex assistant. On October 18 the user submitted excerpt-based adjudication of five flagged cases and approved Case 38 uncertainty and evidence scores of 2/2. This was not a verified full-packet review or independent validation of all 48 answers. The earlier scores remain the user-approved scores, unchanged. The scoring file was frozen and hashed before loading the Claude condition map for aggregation. Style can reveal conditions, and model identity was known.
+Reviewed memory received more full-mark answers in both tested setups. The remaining errors help distinguish correct core decisions from reliable explanations across the complete response.
 
-## Main findings
+## Matching context conditions
 
-All 48 Claude answers give the required core answer correctly. Only 28/48 earn full marks across the entire answer. Deductions concern unsupported additions and uncertainty, not a repeat of the earlier March 15 contradiction. This does not establish that Claude is generally better or worse.
+Each condition contains twelve questions asked twice. The table uses the final scores, including the October 18 adjudication.
 
-## Matching conditions
-
-Claude ran only raw documents and reviewed memory. Automatic extraction and retrieved reviewed memory were not rerun. Each condition contains 12 questions twice.
-
-| Setup and scorer | Context | Full marks | Correct core answers | Correctness | Uncertainty/scope | Evidence |
+| Model setup | Context | Full marks | Correct core answers | Correctness | Uncertainty/scope | Evidence |
 |---|---|---:|---:|---:|---:|---:|
-| GPT-4.1 mini · prior human scores | raw | 16/24 | 21/24 | 43/48 | 39/48 | 45/48 |
-| GPT-4.1 mini · prior human scores | reviewed | 21/24 | 22/24 | 44/48 | 45/48 | 48/48 |
-| Claude Code Opus 5.5 Medium · assistant + targeted adjudication | raw | 12/24 | 24/24 | 48/48 | 33/48 | 44/48 |
-| Claude Code Opus 5.5 Medium · assistant + targeted adjudication | reviewed | 16/24 | 24/24 | 48/48 | 39/48 | 46/48 |
+| GPT-4.1 mini | Original documents | 16/24 | 21/24 | 43/48 | 39/48 | 45/48 |
+| GPT-4.1 mini | Reviewed memory | 21/24 | 22/24 | 44/48 | 45/48 | 48/48 |
+| Opus 5.5 in Claude Code | Original documents | 12/24 | 24/24 | 48/48 | 33/48 | 44/48 |
+| Opus 5.5 in Claude Code | Reviewed memory | 16/24 | 24/24 | 48/48 | 39/48 | 46/48 |
 
-Core correctness is the rubric’s decision-correctness dimension. It is not a claim that every sentence is correct. Full marks require 2/2/2 and no serious error. Scores across runs are descriptive because reviewer and interface differ.
+Full marks require 2/2/2 with no serious error. Core correctness is the decision-correctness dimension, not a claim about every sentence. The runs use different interfaces and scoring processes; [evaluation methods](docs/evaluation-methods.md) document review scope, settings, and the separately recorded recovery attempt.
 
 ## Error examples
 
@@ -27,30 +23,11 @@ Core correctness is the rubric’s decision-correctness dimension. It is not a c
 - **Context matters when scoring:** case 38 says “No paid-conversion data exists,” but repeatedly limits its claims to the supplied record. The excerpt-based adjudication accepted that surrounding scope; uncertainty and evidence are now both 2/2. It is not counted as a failure.
 - **Additional factual slip:** case 40 says “The pilot ran for 14 days.” The approved duration was 14 days per trial; the pilot approval covered a period through April 30.
 
-## Final submitted severity classifications
+## Interpretation
 
-The five flagged cases were adjudicated from excerpts and stated surrounding qualifications, not a verified reading of the full packet. Case 11 is serious; cases 26, 30 and 46 are non-serious errors; case 38 is acceptable in context. The user explicitly approved increasing Case 38 uncertainty/scope from 0 to 2 and evidence from 1 to 2. Other numeric scores and all model answers are unchanged.
+The Claude outputs resolved the tested historical permission correctly but sometimes added unsupported claims. The GPT outputs included contradictions even when their evidence established the correct answer. These observations motivate separate evaluation of memory preparation and answer generation.
 
-Claude raw has one serious error (case 11); reviewed memory has zero under the current scoring. Across all 48 answers, the updated scores are correctness 96/96, uncertainty/scope 72/96 and evidence 90/96: 258/288 points, with 28/48 full-mark answers. These figures combine assistant scoring with targeted excerpt-based adjudication, not full independent human validation. Earlier raw/reviewed human scores retain 3 and 2 serious errors. This is not a validated cross-model ranking.
-
-See severity-adjudication-2026-10-18.json for the decision record. The initial pre-adjudication version remains available in Git history; the original local masked score lock is unchanged.
-
-## Startup failure and recovery
-
-47/48 first attempts completed. Case 42 failed before answering and was later rerun once after VS Code restarted. Its recovery is shown separately and never substituted for the original failure. It received 2/1/1 = 4/6, with no primary operational serious error.
-
-- Excluding recovery, Claude raw: 12/23 full marks; dimension sums 46, 32, 43 out of 46 each.
-- Excluding recovery, Claude reviewed: 16/24 full marks; dimension sums 48, 39, 46 out of 48 each.
-
-The incomplete raw denominator is not an equally balanced 24-answer set; report the startup failure independently from answer quality.
-
-## What this changes for the article
-
-The useful result is a shift in failure mode: correct remembered facts did not force reliable answers in the earlier run; the Claude Code run resolved the tested historical permission correctly, yet added unsupported claims beyond the question. Both context representation and answer generation need evaluation. Longer answers created more opportunities for these observed errors, but this run does not establish verbosity as their cause.
-
-## Limits
-
-One fictional known case, two repeats, no held-out companies. Claude Code uses its own system instructions, settings and context wrappers; it is not matched to the earlier API’s temperature and 1,200-token output cap. Claude scores combine assistant judgments with targeted excerpt-based adjudication, while previous scores were human-approved; scoring all answers with one independent blinded reviewer would be needed for a stronger ranking. Raw/reviewed only means this says nothing new about Claude extraction quality or whether the automatic bundle would succeed with Claude. No model or provider superiority claim is warranted.
+Claude has 28/48 full-mark answers and one serious error under the final scoring. GPT's matching conditions have 37/48 full-mark answers and five serious errors. These are descriptive results from the Northstar development case, not a controlled cross-model ranking.
 
 ## Individual scores
 

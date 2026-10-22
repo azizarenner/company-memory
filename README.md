@@ -1,23 +1,48 @@
 # Company Memory
 
-**Turn a small collection of company documents into an evidence-linked knowledge bundle for an AI agent.**
+**Organize company decisions into evidence-linked context for AI agents.**
 
-Company Memory explores three uses of prepared company knowledge: remembering decisions, onboarding an agent, and connecting scattered knowledge. The Python prototype currently compiles decision-focused bundles; the broader use cases are illustrated in a draft worked example.
+I'm Aziza, a data specialist exploring how agents can remember company decisions, share context, and use information that changes over time. This repository contains the Python prototype, worked examples, and experiments behind my Company Memory series.
 
-It reads complete Markdown and text files, accepts or generates a structured extraction, checks exact evidence quotes, and writes a draft [Open Knowledge Format (OKF v0.2)](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md) bundle. It also assembles that bundle into one context file.
+[Read Part 1 on Substack](https://zizuinbeta.substack.com/p/what-would-it-take-to-give-a-company) · [Results](NORTHSTAR_RESULTS.md) · [Try the demo](#run-the-demo) · [Roadmap](docs/roadmap.md)
 
-**Status:** early prototype. The [October 14 results archive](NORTHSTAR_RESULTS.md) includes a human-reviewed GPT-4.1 mini comparison and a Claude Code follow-up with assistant scores and October 18 excerpt-based adjudication of five flagged cases. The revised Claude total is 28/48 full-mark answers and one serious error; the full answer set has not been independently human-validated. It contains fictional sources, exact task packets, unchanged answers, scores, and the recorded startup failure/recovery. Results are from one known development case; they do not establish general model or architecture superiority. Earlier experiments are documented in [experiment status](EXPERIMENT_STATUS.md).
+## What it does
 
-## Explore the three use cases
+The prototype reads complete Markdown and text files, accepts or generates a structured extraction, verifies exact evidence quotes, and compiles an [Open Knowledge Format (OKF v0.2)](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md) bundle. It assembles the knowledge records into a context file an agent can read in full.
 
-Read the [complete Northstar worked example](COMPANY_MEMORY_EXAMPLE.md): ten fictional source documents, a decision history, an agent onboarding guide and an explanation connecting documents. Start with the onboarding guide’s worked request. All three outputs are assistant-prepared drafts with completed [source and usefulness checks](SOURCE_REVIEW.md). Independent human validation is pending; these are not automatically compiled or benchmarked results.
+```text
+Source documents → structured extraction → validated bundle → agent context
+```
+
+Records preserve decisions, history, evidence, and unknowns. The compiler checks structure and source integrity; interpreting the evidence remains a separate task.
+
+## Findings from the first study
+
+On twelve questions about the fictional company Northstar, asked twice per setup, reviewed memory produced more full-mark answers than the original documents:
+
+| Model setup | Original documents | Reviewed memory |
+|---|---:|---:|
+| GPT-4.1 mini | 16/24 | 21/24 |
+| Opus 5.5 in Claude Code | 12/24 | 16/24 |
+
+Full marks require correctness, appropriate uncertainty, and evidence support throughout the answer. Some responses still drew unsupported conclusions despite having the correct evidence. The study examines context preparation within each setup; it is not a model ranking.
+
+Explore the [results and examples](NORTHSTAR_RESULTS.md), [evaluation methods](docs/evaluation-methods.md), or [complete evidence archive](northstar-results-2026-10-14.zip).
+
+## Three company-memory use cases
+
+- **Remembering decisions:** what changed, why, and which decision applies at a given time.
+- **Onboarding an agent:** vocabulary, responsibilities, and processes needed for a task.
+- **Connecting scattered knowledge:** explanations that combine documents while keeping evidence traceable.
+
+The [Northstar worked example](COMPANY_MEMORY_EXAMPLE.md) illustrates all three. The current compiler implements decision-focused bundles; the onboarding and synthesis views are authored examples. See [source checks](SOURCE_REVIEW.md).
 
 ## See the original compiler example
 
 Northstar is a fictional company. Its January proposal, February pilot approval, April review, and May decision explain why enterprise trials moved to assisted onboarding.
 
 - [Original documents](examples/northstar/sources/)
-- [Prepared extraction](examples/northstar/extraction.json) — an assistant-authored reference fixture, not output from a live API run
+- [Prepared extraction](examples/northstar/extraction.json) — reference fixture for the compiler demo
 - [Generated decision record](examples/northstar/bundle/knowledge/decisions/trial-onboarding.md)
 - [Complete context file](examples/northstar/bundle/context.md)
 - [Evaluation questions](docs/evaluation.md)
@@ -60,7 +85,7 @@ python3 company_memory.py build path/to/source-folder \
   --model YOUR_MODEL_ID --out build/my-memory
 ```
 
-This command sends all accepted source files to the OpenAI Responses API and incurs that provider's model charges. It requests `store: false`; that setting is not a general promise about provider retention policies. The key is read from the environment and is never saved in a bundle. There is no default model or automatic retry. Incomplete responses and refusals fail without producing a bundle. The published adapter has mocked transport tests. Subsequent local evaluation code has exercised live requests; those experimental code additions are not included in this documentation update.
+This command sends all accepted source files to the OpenAI Responses API and incurs that provider's model charges. It requests `store: false`; that setting is not a general promise about provider retention policies. The key is read from the environment and is never saved in a bundle. There is no default model or automatic retry. Incomplete responses and refusals fail without producing a bundle. See [architecture](docs/architecture.md) for the compiler contract and [evaluation methods](docs/evaluation-methods.md) for the published live runs.
 
 The adapter follows [OpenAI's structured output documentation](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses). Structured output constrains the response shape, not its factual correctness.
 
@@ -98,7 +123,7 @@ python3 company_memory.py compare build/northstar \
 
 This creates two prompts for fresh model sessions and an unrun results record. It does not execute or score a model benchmark. Use the same model and settings, score against original sources, and include extraction/review costs. See [the evaluation plan](docs/evaluation.md).
 
-## Limits that matter
+## Implementation scope
 
 - The model, or the person writing the extraction, decides authority, chronology, scope, and relevance. Those judgments can be wrong even when quotes match.
 - Dates are validated as calendar dates; the compiler does not independently infer which date a passage means.
@@ -120,4 +145,3 @@ See [architecture](docs/architecture.md), [roadmap](docs/roadmap.md), and [contr
 ## License
 
 MIT. See [LICENSE](LICENSE). The included Northstar documents are fictional and covered by the same license.
-

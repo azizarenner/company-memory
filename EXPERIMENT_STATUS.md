@@ -1,23 +1,23 @@
-# Experiment status — October 12, 2026
+# Experiment history
 
-The public compiler is an early prototype. Subsequent local development has run live extractions and raw-document versus prepared-memory answer comparisons. The experimental runners and full response archives remain local and are not included in this documentation update.
+For the completed October 14 study and October 18 scoring update, start with [Northstar results](NORTHSTAR_RESULTS.md). The notes below cover earlier development experiments and explain how the evaluation evolved.
 
-## What happened
+## Initial decision-memory experiments
 
-The first four-document Northstar comparison reached the correct main conclusion on six of seven questions in each condition in a provisional assistant review. Both incorrectly inferred that the earlier 14-day pilot duration continued after a later onboarding change. The generated context was larger than the originals.
+The first four-document Northstar comparison reached the correct main conclusion on six of seven questions in each condition under provisional assistant scoring. Both conditions incorrectly carried a 14-day pilot duration forward after a later onboarding change. The generated context was larger than the source documents.
 
-Follow-ups explored uncertainty prompts, attribute-level decision records, exact citation checks and a separate model reviewer. These exposed missing uncertainty, misleading extracted records, invalid quotations and incorrect conclusions despite valid citations.
+Follow-ups explored explicit uncertainty, attribute-level records, exact citation checks, and a separate model reviewer. They exposed extraction errors, invalid quotations, and incorrect conclusions despite valid citations.
 
-The latest local source-ID experiment used six known questions, two answer conditions and three reviewer controls: 27 successful API requests. The reviewer approved all 12 generated answers, including contradictions and unsupported conclusions. Three simple control claims were handled as expected. This does not establish reliable automatic verification.
+## Reviewer experiment
 
-## Why this is not a benchmark claim
+A source-ID experiment used six known questions, two answer conditions, and three reviewer controls: 27 successful API requests. The reviewer approved all twelve generated answers, including contradictions and unsupported conclusions, while handling three simple control claims as expected.
 
-The cases are small, fictional and known to the developing assistant. Human validation is pending. The latest answer generator and reviewer used the same model snapshot, gpt-4.1-mini-2025-04-14. The reviewer received full originals but not the original question. There was no human-checked bundle baseline. Questions about missing permission versus prohibition need clearer wording. Representation and prompting evolved together across runs.
+The answer generator and reviewer used the same GPT-4.1 mini snapshot. The reviewer received the original sources but not the question. Prompts and representations changed between these early runs, and a reviewed-memory baseline had not yet been introduced. These findings informed the subsequent fixed comparison.
 
-The latest workflow remained retrieval-free, but its reviewer loaded full originals, so it was not memory-only end to end. None of this establishes that a knowledge format improves accuracy, saves tokens or replaces retrieval.
+## Completed Northstar comparison
 
-## Current direction
+The October 14 study introduced an approved reference memory and answer key, four GPT context conditions, and a Claude follow-up on original documents and reviewed memory. The [results archive](NORTHSTAR_RESULTS.md) publishes inputs, unchanged answers, scores, and review records. [Evaluation methods](docs/evaluation-methods.md) describe the setup and review scope.
 
-The [expanded Northstar example](COMPANY_MEMORY_EXAMPLE.md) restores all three use cases: decisions, agent onboarding and cross-document explanation. Its three draft outputs await human review. It is development material, not an unseen evaluation set.
+## Next phase
 
-Review these artifacts for usefulness and source fidelity before extending the compiler. Future comparisons should distinguish raw documents, a human-checked bundle and an automatically prepared bundle, and include the question in any relevance review. Earlier failures remain informative development cases rather than evidence against every company-memory architecture.
+The [roadmap](docs/roadmap.md) extends this work to changing policies, shared context, access changes, unseen tasks, and total cost per successful task.
